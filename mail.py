@@ -23,12 +23,17 @@ msg['To'] = empfangsEmail
 msg['X-Priority'] = '2'
 msg['Subject'] = "Eine TeamViewer ID bei "+nameKunde+" hat sich geaendert"
 hostname = socket.gethostname()
-tvIDOld = open("shortIDOld.txt").readlines()
-tvIDNew = open("shortID.txt").readlines()
-mailUsername=open("login.txt").readlines()
-mailPassword=open("login.txt").readlines()
+IDShortOld = file('shortIDOld.txt', 'r')
+lines = IDShortOld.readlines()
+outputShortIDOld = lines[0]
+IDShortOld.close()
+IDShortNew = file('shortID.txt', 'r')
+lines = IDShortNew.readlines()
+OutputShortID = lines[0]
+IDShortNew.close()
 
-emailText = "Kunde: "+nameKunde+" <br> Hostname: "+hostname+" <br> IP: "+str(ip)+" <br> TeamViewer ID alt: "+str(tvIDOld)+" <br> TeamViewer ID neu: "+str(tvIDNew)+""
+emailText = "Kunde: "+nameKunde+" <br> Hostname: "+hostname+" <br> IP: "+str(ip)+" <br> TeamViewer ID alt: "+str(outputShortIDOld)+" <br> TeamViewer ID neu: "+str(OutputShortID)+""
+
 msg.attach(MIMEText(emailText, 'html'))
 server = smtplib.SMTP(smtpServer, smtpServerPort)
 server.starttls()
