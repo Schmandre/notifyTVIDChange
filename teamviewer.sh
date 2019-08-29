@@ -10,7 +10,7 @@ if [ -f "$FILE" ]; then
 	DIFF=$(diff shortID.txt shortIDOld.txt) 
 	if [ "$DIFF" != "" ] 
 	then
-		cho "Die TeamViewer ID's haben sich geaendert"
+		echo "Die TeamViewer ID's haben sich geaendert"
 		python mail.py
 	fi
 else 
