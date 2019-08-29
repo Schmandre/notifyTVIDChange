@@ -1,11 +1,11 @@
 import smtplib
 import socket
+import config
 from email.MIMEMultipart import MIMEMultipart
 from email.MIMEText import MIMEText
 
 #INIT
 senderEmail = "sender@domain.com"
-senderPassword = "PASSWORD"
 empfangsEmail = "empfaenger@domain.com"
 smtpServer = "CHANGEME"
 smtpServerPort = 25
@@ -37,7 +37,7 @@ emailText = "Kunde: "+nameKunde+" <br> Hostname: "+hostname+" <br> IP: "+str(ip)
 msg.attach(MIMEText(emailText, 'html'))
 server = smtplib.SMTP(smtpServer, smtpServerPort)
 server.starttls()
-server.login(senderEmail, senderPassword)
+server.login(config.username, config.password)
 text = msg.as_string()
 server.sendmail(senderEmail, empfangsEmail, text)
 server.quit()
