@@ -19,3 +19,4 @@ else
 	sleep 10
 	python read.py
 fi
+rm longID.txt
