@@ -31,7 +31,7 @@ emailText = "Kunde: "+nameKunde+" <br> Hostname: "+hostname+" <br> IP: "+str(ip)
 msg.attach(MIMEText(emailText, 'html'))
 server = smtplib.SMTP(smtpServer, smtpServerPort) #SMTP Server
 server.starttls()
-server.login(mailUsername[0], mailPassword[1]) #Passwort der Sendeadresse
+server.login(senderEmail, "PASSWORD") #Passwort der Sendeadresse
 text = msg.as_string()
 server.sendmail(senderEmail, empfangsEmail, text)
 server.quit()
