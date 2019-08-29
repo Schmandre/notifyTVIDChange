@@ -13,5 +13,5 @@ outputShort = outputLong.translate(all, nodigs)
 
 #Export in die neue Textdatei
 fileOUT = open('shortID.txt','w') 
-fileOUT.write(outputShort) 
+fileOUT.write(outputShort[2:]) 
 fileOUT.close() 
