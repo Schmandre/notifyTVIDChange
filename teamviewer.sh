@@ -14,7 +14,7 @@ if [ -f "$FILE/shortID.txt" ]; then
       python mail.py
     fi
     else
-      echo "$FILE/shortID.txt does not exist"
+      echo "$FILE/shortID.txt does not exist, creating"
       python idExport.py > longID.txt
       sleep 10
       python read.py
