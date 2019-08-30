@@ -1,6 +1,6 @@
 # notifyTVIDChange
 
-Get a E-Mail notification if the TeamViewer ID will change.
+Get a E-Mail notification if the TeamViewer ID has changed.
 
 ## Getting Started
 
