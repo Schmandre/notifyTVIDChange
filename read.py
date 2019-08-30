@@ -1,17 +1,17 @@
 import string
 
-#Einlesen der Datei und Ausgabe der Zeile mit der TV ID
+#Read the data from longID and return the TV ID
 fileIN = file('longID.txt', 'r')
 lines = fileIN.readlines()
 outputLong = lines[3]
 fileIN.close()
 
-#Entfernen aller Zeichen die keine number sind
+#Remove all characters that are not numbers
 all=string.maketrans('','')
 nodigs=all.translate(all, string.digits)
 outputShort = outputLong.translate(all, nodigs)
 
-#Export in die neue Textdatei
-fileOUT = open('shortID.txt','w') 
-fileOUT.write(outputShort[2:]) 
+#Export in a new text file
+fileOUT = open('shortID.txt','w')
+fileOUT.write(outputShort[2:])
 fileOUT.close() 
