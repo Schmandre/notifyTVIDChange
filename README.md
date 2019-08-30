@@ -2,7 +2,7 @@
 
 Get a E-Mail notification if the TeamViewer ID has changed.
 
-### Prerequisites
+## Prerequisites
 
 If not installed, get python (min 2.7.X)
 
