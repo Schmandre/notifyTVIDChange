@@ -23,7 +23,7 @@ IDShortNew = file('shortID.txt', 'r')
 outputShortID = IDShortNew.readlines()[0]
 IDShortNew.close()
 
-emailText = "Customer: "+config.nameCustomer+" <br> Hostname: "+hostname+" <br> IP: "+str(ip)+" <br> TeamViewer ID old: "+str(outputShortIDOld)+" <br> TeamViewer ID new: "+str(outputShortID)+""
+emailText = "<hr><table><tr><td>Customer:</td><td>"+config.nameCustomer+"</td></tr><tr><td>Hostname:</td><td>"+hostname+"</td></tr><tr><td>IP:</td><td>"+str(ip)+"</td></tr><tr><td>TeamViewer ID old:</td><td>"+str(outputShortIDOld)+"</td></tr><tr><td>TeamViewer ID new:</td><td>"+str(outputShortID)+"</td></tr></table><hr>"
 
 msg.attach(MIMEText(emailText, 'html'))
 server = smtplib.SMTP(config.smtpServer, config.smtpServerPort)
