@@ -17,10 +17,10 @@ msg['To'] = config.receiverEmail
 msg['X-Priority'] = '2'
 msg['Subject'] = "TeamViewer ID at "+config.nameCustomer+" has changed"
 hostname = socket.gethostname()
-IDShortOld = file('shortIDOld.txt', 'r')
+IDShortOld = file(config.pathToScripts+'shortIDOld.txt', 'r')
 outputShortIDOld = IDShortOld.readlines()[0]
 IDShortOld.close()
-IDShortNew = file('shortID.txt', 'r')
+IDShortNew = file(config.pathToScripts+'shortID.txt', 'r')
 outputShortID = IDShortNew.readlines()[0]
 IDShortNew.close()
 
