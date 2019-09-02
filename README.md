@@ -13,8 +13,9 @@ You need to do the following steps
 ```
 1. Unzip the file where ever you like
 2. Fill in the credentials and other parameters in config.py
-3. Set the correct path at the "FILE" var
-4. You are ready to go
+3. Set the correct path at the "FILE" var in teamviewer.sh
+4. Make the teamviewer.sh executable 
+5. You are ready to go
 ```
 
 ## Authors
