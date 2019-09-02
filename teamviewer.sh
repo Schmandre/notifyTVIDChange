@@ -8,7 +8,7 @@ if [ -f "$FILE/shortID.txt" ]; then
     sleep 10
     python $FILE/read.py
     sleep 10
-    DIFF=$(diff shortID.txt shortIDOld.txt)
+    DIFF=$(diff $FILE/shortID.txt $FILE/shortIDOld.txt)
     if [ "$DIFF" != "" ]
     then
       echo "TeamViewer ID has changed!"
