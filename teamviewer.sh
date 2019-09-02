@@ -1,6 +1,6 @@
 #!/bin/sh
 FILE="SET YOUR PATH HERE"
-grep $FILE'/teamviewer.sh' /etc/crontab || echo '0 * * * * su root -c "'$FILE'/teamviewer.sh"' >> /etc/crontab
+grep $FILE'/teamviewer.sh' /var/spool/cron/crontabs/root || echo '0 * * * * su root -c "'$FILE'/teamviewer.sh"' >> /var/spool/cron/crontabs/root
 if [ -f "$FILE/shortID.txt" ]; then
     echo "$FILE/shortID.txt already exists"
 	  mv $FILE/shortID.txt $FILE/shortIDOld.txt
