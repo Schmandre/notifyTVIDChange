@@ -10,6 +10,7 @@ s.connect(("8.8.8.8", 80))
 ip=s.getsockname()[0]
 s.close()
 
+#DoNotEdit
 msg = MIMEMultipart()
 msg['From'] = config.senderEmail
 msg['To'] = config.receiverEmail
