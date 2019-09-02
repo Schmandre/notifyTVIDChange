@@ -1,7 +1,8 @@
 import string
+import config
 
 #Read the data from longID and return the TV ID
-fileIN = file('longID.txt', 'r')
+fileIN = file(config.pathToScripts+'longID.txt', 'r')
 lines = fileIN.readlines()
 outputLong = lines[3]
 fileIN.close()
@@ -12,6 +13,6 @@ nodigs=all.translate(all, string.digits)
 outputShort = outputLong.translate(all, nodigs)
 
 #Export in a new text file
-fileOUT = open('shortID.txt','w')
+fileOUT = open(config.pathToScripts+'shortID.txt','w')
 fileOUT.write(outputShort[2:])
-fileOUT.close() 
+fileOUT.close()
