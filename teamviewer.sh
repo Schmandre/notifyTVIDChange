@@ -19,4 +19,4 @@ if [ -f "$FILE/shortID.txt" ]; then
       sleep 10
       python $FILE/read.py
     fi
-rm longID.txt
+rm $FILE/longID.txt
