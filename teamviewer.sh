@@ -1,7 +1,7 @@
 #!/bin/sh
 FILE="SET YOUR PATH HERE"
 if [ -f "$FILE/shortID.txt" ]; then
-    echo "$FILE/shortID.txt exist"
+    echo "$FILE/shortID.txt already exists"
 	  mv $FILE/shortID.txt $FILE/shortIDOld.txt
     python idExport.py > longID.txt
     sleep 10
@@ -10,7 +10,7 @@ if [ -f "$FILE/shortID.txt" ]; then
     DIFF=$(diff shortID.txt shortIDOld.txt)
     if [ "$DIFF" != "" ]
     then
-      echo "The TeamViewer ID has changed!"
+      echo "TeamViewer ID has changed!"
       python mail.py
     fi
     else
