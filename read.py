@@ -2,10 +2,11 @@ import string
 import config
 
 #Read the data from longID and return the TV ID
-fileIN = file(config.pathToScripts+'longID.txt', 'r')
-lines = fileIN.readlines()
-outputLong = lines[3]
-fileIN.close()
+with open(config.pathToScripts+'longID.txt') as fileIN:
+    for countLine, line in enumerate(fileIN, 1):
+        if "TeamViewer ID:" in line:
+            countLine = str(countLine)
+            outputLong = line
 
 #Remove all characters that are not numbers
 all=string.maketrans('','')
